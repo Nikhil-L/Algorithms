@@ -1,5 +1,5 @@
 
-// It is a simple java program for the implementation of Binayr search.
+// It is a simple java program for the implementation of Binary search.
 // On sucessful search it returs position which results in displaying the position 
 // and on unsucessful search it returns -1 which results in displaying message 
 // saying key element not found.
