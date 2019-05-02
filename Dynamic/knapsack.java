@@ -1,7 +1,8 @@
 
 import java.util.*;
+import java.lang.*;
 
-class knapsack
+public class knapsack
 {
 	public static int max(int a, int b)
 	{
@@ -12,17 +13,42 @@ class knapsack
 		return b;
 	}
 
-	public static int fill(int w[], int p[], int c, int n)
+	public static int fill(int W[], int p[], int c, int n)
 	{
-		if(n==0 || c== 0)
+		int i, w;
+		int k[][] = new int[n+1][c+1];
+
+		for(i = 0; i <= n; i++)
+			for(w = 0; w <= c; w++)
+			{
+				if(i == 0 || w == 0)
+				{
+					k[i][w] = 0;
+				}
+				else if(W[i-1] <= w)
+				{
+					k[i][w] = Math.max(p[i-1]+k[i-1][w-W[i-1]], k[i-1][w]);
+				}
+				else
+				{
+					k[i][w] = k[i-1][w];
+				}
+			}
+
+		int res = k[n][c];
+		w = c;
+		for(i = n; res > 0 && i > 0;i--)
 		{
-			return 0;
+			if(res == k[i-1][w])
+				continue;
+			else
+			{
+				res = res - p[i-1];
+				w = w - W[i-1];
+				System.out.print(W[i-1] + " ");
+			}
 		}
-		if(w[n-1] > c)
-		{
-			return fill(w, p, c, n-1);
-		}
-		return max(p[n-1] + fill(w, p, c - w[n-1], n-1), fill(w, p, c, n-1));
+		return k[n][c];
 	}
 
 	public static void main(String[] args)
