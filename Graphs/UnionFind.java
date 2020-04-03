@@ -5,6 +5,7 @@ import java.lang.*;
 
 class UnionFind
 {
+	public static Scanner ip;
 
 	public static void union(int a[], int n)
 	{
@@ -61,7 +62,7 @@ class UnionFind
 
 	public static void main(String[]args)
 	{
-		Scanner ip = new Scanner(System.in);
+		ip = new Scanner(System.in);
 		int n;
 		System.out.println("Enter the number of nodes : ");
 		n = ip.nextInt();
@@ -73,7 +74,7 @@ class UnionFind
 			a[i] = i;
 		}
 
-		while(1)
+		while(true)
 		{
 			int ch;
 			ch = ip.nextInt();
@@ -88,7 +89,7 @@ class UnionFind
 						break;
 				case 3: print(a, n);
 						break;
-				default: return 0;
+				default: return;
 			}
 		}
 
