@@ -8,7 +8,25 @@ class UnionFind
 
 	public static void union(int a[], int n)
 	{
+		int p, q;
+		System.out.println("Enter the two nodes to be connected : ");
+		p = ip.nextInt() - 1;
+		q = ip.nextInt() - 1;
+		if(p > n | q > n)
+		{
+			System.out.println("There is no such tree");
+			return; 
+		}
 
+		if(a[p] == a[q])
+			return;
+		int pid = a[p];
+		int qid = a[q];
+		for(int i = 0; i < n; i++)
+		{
+			if(a[i] == pid)
+				a[i] = qid;
+		}
 	}
 
 	public static void find(int a[], int n)
