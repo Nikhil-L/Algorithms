@@ -13,12 +13,28 @@ class UnionFind
 
 	public static void find(int a[], int n)
 	{
-
+		int p, q;
+		System.out.println("Enter the two nodes which to find its connectivity : ")
+		p = ip.nextInt() - 1;
+		q = ip.nextInt() - 1;
+		if(p > n | q > n)
+		{
+			System.out.println("There is no such tree");
+			return; 
+		}
+		if(a[p] == a[q])
+		{
+			System.out.println("Connected");
+		}
+		else
+		{
+			System.out.println("Not connected");
+		}
 	}
 
 	public static void print(int a[], int n)
 	{
-		
+
 	}
 
 	public static void main(String[]args)
