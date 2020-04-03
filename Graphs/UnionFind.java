@@ -66,7 +66,6 @@ class UnionFind
 		int n;
 		System.out.println("Enter the number of nodes : ");
 		n = ip.nextInt();
-		System.out.println(n);
 
 		int a[] = new int[n];
 		for(int i = 0; i < n; i++)
@@ -76,10 +75,11 @@ class UnionFind
 
 		while(true)
 		{
-			int ch;
-			ch = ip.nextInt();
 
 			System.out.println("Enter : \n1.union\n2.Find\n3.Print\n4.Exit");
+
+			int ch;
+			ch = ip.nextInt();
 
 			switch(ch)
 			{
