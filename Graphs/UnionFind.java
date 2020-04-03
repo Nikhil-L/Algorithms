@@ -14,7 +14,7 @@ class UnionFind
 	public static void find(int a[], int n)
 	{
 		int p, q;
-		System.out.println("Enter the two nodes which to find its connectivity : ")
+		System.out.println("Enter the two nodes which to find its connectivity : ");
 		p = ip.nextInt() - 1;
 		q = ip.nextInt() - 1;
 		if(p > n | q > n)
