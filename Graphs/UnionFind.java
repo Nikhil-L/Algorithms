@@ -13,7 +13,7 @@ class UnionFind
 		System.out.println("Enter the two nodes to be connected : ");
 		p = ip.nextInt() - 1;
 		q = ip.nextInt() - 1;
-		if(p > n | q > n)
+		if(p >= n | q >= n)
 		{
 			System.out.println("There is no such tree");
 			return; 
@@ -36,7 +36,7 @@ class UnionFind
 		System.out.println("Enter the two nodes which to find its connectivity : ");
 		p = ip.nextInt() - 1;
 		q = ip.nextInt() - 1;
-		if(p > n | q > n)
+		if(p >= n | q >= n)
 		{
 			System.out.println("There is no such tree");
 			return; 
@@ -55,7 +55,7 @@ class UnionFind
 	{
 		for(int i = 0; i < n; i++)
 		{
-			System.out.print(a[i] + " ");
+			System.out.print((a[i]+1) + " ");
 		}
 		System.out.println();
 	}
